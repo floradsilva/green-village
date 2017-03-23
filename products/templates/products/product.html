@@ -22,22 +22,35 @@
 </section>
 <section class="row">
 	<div class="grid">
-	<h1>Products</h1>
-		{% if products %}
-			{% for product in products %}
-				<section class="teaser col-1-3">
-					<div class="speaker-info">
-						<a href="{% url 'products:product' product.id %}">
-							<img src="{{ MEDIA_URL }}{{ product.small_img }}" alt={{ product.name }}>
-							<h3>{{ product.name }}</h3>
-						</a>
-						<p>Rs. {{ product.price }}</p>
-					</div>
-				</section>
-			{% endfor %}
+	
+		{% if product %}
+			<section class="speaker" id="aaron-irizarry">
+
+          	<div class="col-2-3">
+
+            <h2>{{ product.name }}</h2>
+            <h5></h5>
+
+            <h5>Description</h5>
+
+            <p>{{ product.description }}</p>
+
+          </div><!--
+
+          --><aside class="col-1-3">
+            <div class="speaker-info">
+              <img src="{{MEDIA_URL}}{{product.small_img}}" alt={{ product.name}}>
+              <ul>
+                <li>{{ product.name }}</li>
+              </ul>
+
+            </div>
+          </aside>
+
+        </section>
 		{% else %}
 			<section class="teaser col-1-3">
-				<p>No Products Found.</p>
+				<p>No Product Found.</p>
 			</section>
 		{% endif %}
 			
