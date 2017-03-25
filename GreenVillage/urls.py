@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from GreenVillage import settings
-
+from products import views as products_views
 urlpatterns = [
+	url(r'^home$', products_views.products_list, name='home'),
+	url(r'^', include('user_info.urls', namespace='user_info')),
 	url(r'^products/', include('products.urls', namespace='products')),
     url(r'^admin/', admin.site.urls),
 ]

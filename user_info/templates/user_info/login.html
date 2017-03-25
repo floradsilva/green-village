@@ -1,0 +1,15 @@
+{% extends 'products/base.html' %}
+{% block content %}
+	<section class="row">
+		<div class="grid">
+		  <h2>Login</h2>
+		  <form method="post">
+		    {% csrf_token %}
+		    {{ form.as_p }}
+		    <button type="submit">Login</button>
+		  </form>
+
+		  <a href="{% url 'user_info:signup' %}"> Register if not logged in </a>
+		</div>
+	</section>
+{% endblock %}

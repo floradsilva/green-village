@@ -1,25 +1,5 @@
-{% load static %}
-<meta charset="utf-8">
-<title>Products</title>
-<link rel="stylesheet" type="text/css" href="{% static 'products/style.css' %}">
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-
-<header class="primary-header container group">
-	<h1 class="logo">
-		<a href="index.html">Green <br> Village</a>
-	</h1>
-	<nav class="nav primary-nav">
-	  <ul>
-		   <li><a href="{% url 'products:products' %}">Home</a></li><!--
-		--><li><a href="{% url 'products:products' %}">Products</a></li><!--
-		--><li><a href="#">Login</a></li><!--
-		--><li><a href="#">Cart</a></li><!--
-		--><li><a href="#">About</a></li>
-	  </ul>
-	</nav>
-</header>
-<section class="hero container">
-</section>
+{% extends 'products/base.html' %}
+{% block content %}
 <section class="row">
 	<div class="grid">
 	<h1>Products</h1>
@@ -43,15 +23,4 @@
 			
 	</div>
 </section>
-<footer class="primary-footer container group">
-	<small>&copy; Styles Conference</small>
-	<nav class="nav primary-nav">
-	  <ul>
-		   <li><a href="{% url 'products:products' %}">Home</a></li><!--
-		--><li><a href="{% url 'products:products' %}">Products</a></li><!--
-		--><li><a href="#">Login</a></li><!--
-		--><li><a href="#">Cart</a></li><!--
-		--><li><a href="#">About</a></li>
-	  </ul>
-	</nav>
-</footer>
+{% endblock %}
